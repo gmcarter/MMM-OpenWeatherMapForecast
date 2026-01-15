@@ -71,6 +71,7 @@ Module.register("MMM-OpenWeatherMapForecast", {
         showFeelsLike: true,
         language: config.language,
         iconset: "1c",
+        mainIconset: "1c",   // added so main icon set is defined [web:1]
         useAnimatedIcons: true,
         animateMainIconOnly: true,
         colored: true,
@@ -187,9 +188,10 @@ Module.register("MMM-OpenWeatherMapForecast", {
             "maxHourliesToShow",
             "maxDailiesToShow",
             "mainIconSize",
-            "forecastIconSize",
-            "updateFadeSpeed",
-            "animatedIconPlayDelay"
+            "forecastTiledIconSize",   // fixed name [web:1]
+            "forecastTableIconSize",   // fixed name [web:1]
+            "updateFadeSpeed"
+            // removed "animatedIconPlayDelay" since it is not in defaults
         ]);
 
         //force icon set to mono version whern config.coloured = false
@@ -542,18 +544,18 @@ Module.register("MMM-OpenWeatherMapForecast", {
 
      */
     iconsets: {
-        "1m":	{ path: "1m"	, format: "svg" },
-        "1c":	{ path: "1c"	, format: "svg" },
-        "2m":	{ path: "2m"	, format: "svg" },
-        "2c":	{ path: "2c"	, format: "svg" },
-        "3m":	{ path: "3m"	, format: "svg" },
-        "3c":	{ path: "3c"	, format: "svg" },
-        "4m":	{ path: "4m"	, format: "svg" },
-        "4c":	{ path: "4c"	, format: "svg" },
-        "5m":	{ path: "5m"	, format: "svg" },
-        "5c":	{ path: "5c"	, format: "svg" },
-        "6fa":	{ path: "6fa"	, format: "svg" },
-        "6oa":	{ path: "6oa"	, format: "svg" }
+        "1m":   { path: "1m"    , format: "svg" },
+        "1c":   { path: "1c"    , format: "svg" },
+        "2m":   { path: "2m"    , format: "svg" },
+        "2c":   { path: "2c"    , format: "svg" },
+        "3m":   { path: "3m"    , format: "svg" },
+        "3c":   { path: "3c"    , format: "svg" },
+        "4m":   { path: "4m"    , format: "svg" },
+        "4c":   { path: "4c"    , format: "svg" },
+        "5m":   { path: "5m"    , format: "svg" },
+        "5c":   { path: "5c"    , format: "svg" },
+        "6fa":  { path: "6fa"   , format: "svg" },
+        "6oa":  { path: "6oa"   , format: "svg" }
     },
 
     /*
